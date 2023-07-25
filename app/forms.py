@@ -5,7 +5,6 @@ from database.getDbInfo import getDbInfo
 from loguru import logger
 class agendamentoForm(FlaskForm):
     DbInfo = getDbInfo()
-    logger.critical(DbInfo.get_all_users_info("funcionarios", "nome, nome"))
     nome_funcionario= SelectField("nome_funcionario", choices=DbInfo.get_all_users_info("funcionarios", "nome, nome"))
     nome_cliente= SelectField("nome_cliente", choices=DbInfo.get_all_users_info("clientes", "nome, nome"))
     servico= SelectField("servico", choices=DbInfo.get_all_users_info("servicos", "servico, servico"))

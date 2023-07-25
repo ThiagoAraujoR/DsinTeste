@@ -108,13 +108,11 @@ class agendamento:
 
     def existe_procedimento_na_mesma_semana(self, semana_anterior:str, proxima_semana:str, nome_cliente:str):
         DbInfo = getDbInfo()
-        logger.critical(semana_anterior)
-        logger.critical(proxima_semana)
+
         cliente = DbInfo.get_user_info('clientes', {'nome':nome_cliente, 'sobrenome':''})
 
         sql =f'''select * from agendamentos
         where data between "{semana_anterior}" and "{proxima_semana}" and id_cliente ={cliente[0]}'''
-        logger.critical(sql)
         data = self.sqlExecutor.select_all(sql)
         if data:
             return True

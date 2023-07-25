@@ -12,7 +12,6 @@ class agendamentoController:
             semana_anterior=(date-timedelta(days=7)).date(),
             proxima_semana=(date+timedelta(days=7)).date(),
             nome_cliente=cliente_name):
-            logger.critical(1)
             return "Não deseja marcar para o mesmo dia?"
         agendador.agendar_procedimento(funcionario, cliente, servico, data, horario)
 
