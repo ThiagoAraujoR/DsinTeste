@@ -13,3 +13,5 @@ Olá, para que executar esse projeto siga esses passos:
   python3 app/app.py
 
 Só usar o role da cabeleleira leila
+
+Mais pra frente serão adicionadas mais funcionalidades, como por exemplo login para gerente e a aplicação de testes unitarios
