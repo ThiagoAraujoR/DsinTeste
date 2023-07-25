@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <h1>Agenda</h1>
+        {% if message %}
+        <h4> {{message}} </h4>
+        {% endif %}
+    {% for key, value in content.items() %}
+        {% for agendamento in value %}
+        <button type="button" class="collapsible">
+        {{agendamento['data'] }} || {{agendamento['horario']}}
+            </button>
+            <div class="content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">cliente</th>
+                            <th scope="col">funcionario</th>
+                            <th scope="col">servico</th>
+                            <th scope="col">data</th>
+                            <th scope="col">horario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{agendamento['cliente'].capitalize()}}</td>
+                            <td>{{agendamento['funcionario'].capitalize()}}</td>
+                            <td>{{agendamento['servico'].capitalize()}}</td>
+                            <td>{{agendamento['data']}}</td>
+                            <td>{{agendamento['horario']}}</td>
+
+                        </tr>
+                        <button type="button" class="btn btn-light"><a href='/delete_agendamento/{{agendamento.funcionario}}/{{agendamento['data']}}/{{agendamento['horario']}}'>remover Agendamento</a> </button>
+                        <button type="button" class="btn btn-light"><a href='/reagendar/{{agendamento.funcionario}}/{{agendamento['data']}}/{{agendamento['horario']}}'>Reagendamento</a> </button>
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <button type="button" class="btn btn-light"><a href='/agendar'> Agendar</a> </button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type='text/javascript'>
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    } 
+</script>
+    {% endblock %}

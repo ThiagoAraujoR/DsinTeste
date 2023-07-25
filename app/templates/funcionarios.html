@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <h1>Funcionarios</h1>
+
+    {% for value in content %}
+            <div class="tabela">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sobrenome</th>
+                            <th scope="col">DDD</th>
+                            <th scope="col">Número</th>
+                            <th scope="col">Endereço</th>
+                            <th scope="col">Cargo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{value[1].capitalize()}}</td>
+                            <td>{{value[2].capitalize()}}</td>
+                            <td>{{value[3]}}</td>
+                            <td>{{value[4]}}</td>
+                            <td>{{value[5]}}</td>
+                            <td>{{value[6]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+    {% endfor %}
+    <button type="button" class="btn btn-light"><a href='/adicionar_funcionario' >Adicionar Funcionario</a> </button>
+</div>
+{% endblock %}

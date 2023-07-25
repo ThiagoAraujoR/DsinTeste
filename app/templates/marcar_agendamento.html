@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <form action="" method="post" class="form-inline">
+            {{ form.csrf_token }}
+            <div class="col-12">
+                Funcionario:
+                {{ form.nome_funcionario(class="form-control")}}
+            </div>
+            <div class="col-12">
+                Cliente:
+                {{ form.nome_cliente(class="form-control")}}
+            </div>
+            <div class="col-12">
+                Serviço:
+                {{ form.servico(class="form-control")}}
+            </div>
+            <div class="col-12">
+                Horario:
+                {{ form.horario(class="form-control", placeholder="2023-07-23 00:00:00")}} 
+            </div>
+
+            {{ form.submit }}
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <h1>Serviços</h1>
+
+    {% for value in content %}
+
+    <div class="tabela">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Serviço</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{value[1].capitalize()}}</td>
+                            <td>{{value[2]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+    {% endfor %}
+    <button type="button" class="btn btn-light"><a href='/adicionar_servico'>Adicionar Servico</a> </button>
+</div>
+{% endblock %}

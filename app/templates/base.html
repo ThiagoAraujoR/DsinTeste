@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://kit.fontawesome.com/b4c09d1982.js" crossorigin="anonymous"></script> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  {% block head %}
+  <title>{% block title %}{% endblock %} - Cabelereira Leila </title>
+  {% endblock %}
+  <link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/simple-sidebar.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='bootstrap/bootstrap-datepicker.min.css')}}", rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"> Cabelereira Leila </div>
+      <div class="list-group list-group-flush">
+        <a href="/agenda" class="list-group-item list-group-item-action bg-light">Agendamentos</a>
+        <a href="/clientes" class="list-group-item list-group-item-action bg-light">Clientes</a>
+        <a href="/funcionarios" class="list-group-item list-group-item-action bg-light">Funcionarios</a>
+        <a href="/servico" class="list-group-item list-group-item-action bg-light">Serviços</a>
+      </div>
+    </div>
+
+    <div id="page-content-wrapper">
+
+      <div class="container-fluid">
+        <h1 class="mt-4">{% block contentTitle %}{% endblock %}</h1>
+        <div class="col-12">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% block scripts %}
+  {% endblock %}
+
+</body>
+
+</html>

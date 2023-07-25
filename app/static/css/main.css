@@ -1,0 +1,92 @@
+.card-color{
+    background-color: #e9e9e9;
+}
+
+.card-ok {
+    background-color: rgb(169, 211, 80);
+    padding: 8px;
+  }
+
+.card-error {
+    background-color: rgba(233, 89, 89, 0.932);
+    padding: 8px;
+}
+
+.card-null {
+    background-color: rgba(92, 115, 241, 0.431);
+    padding: 8px;
+}
+  
+.margin-box{
+    margin-right: 0.4em;
+}
+
+.pagination{
+    color: #e9e9e9;
+}
+
+.scroll {
+    overflow: auto;
+    position: fixed;
+}
+
+.item-pagination{
+    background-color: #7EB800 ;
+    border-left: #e9e9e9 solid 1px;
+    text-align: center;
+    padding-left: 0.15%;
+    padding-right: 0.15%;
+}
+
+.item-pagination-error{
+    background-color: brown;
+}
+
+.item-pagination-null{
+    background-color: rgb(50, 132, 255);
+}
+
+.item-pagination:hover{
+    background-color: black;
+
+}
+
+body{
+    overflow: auto;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+#widthset{
+    width:500px;
+    }
+
+.my_table tr {
+    display:flex;
+  }
+  
+.my_table td {
+margin: 2px;
+height: 60px;
+display:flex;
+flex-grow:1;
+/* centering the button */
+align-items:center;
+justify-content:center;
+}
+
+
+.inner_button {
+display:flex;
+/* centering the text inside the button */
+align-items:center;
+justify-content:center;
+
+/* plus the other properties */
+}
+
+.my_button{
+    margin: 5px;
+}

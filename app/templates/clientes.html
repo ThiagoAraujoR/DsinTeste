@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <h1>Clientes</h1>
+    {% for value in content %}
+            <div class="tabela">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sobrenome</th>
+                            <th scope="col">DDD</th>
+                            <th scope="col">Número</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{value[1].capitalize()}}</td>
+                            <td>{{value[2].capitalize()}}</td>
+                            <td>{{value[3]}}</td>
+                            <td>{{value[4]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+    {% endfor %}
+    <button type="button" class="btn btn-light"><a href='/adicionar_cliente' >Adicionar Cliente</a> </button>
+</div>
+{% endblock %}

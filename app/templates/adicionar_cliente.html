@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <form action="" method="post" class="form-inline">
+            {{ form.csrf_token }}
+            <div class="col-12">
+                Nome Cliente:
+                {{ form.nome_cliente(class="form-control")}}
+            </div>
+            <div class="col-12">
+                Nome Funcionario:
+                {{ form.sobrenome_cliente(class="form-control")}}
+            </div>
+            <div class="col-12">
+                DDD:
+                {{ form.ddd(class="form-control")}}
+            </div>
+            <div class="col-12">
+                Número de telefone:
+                {{ form.numero(class="form-control", placeholder="900000000")}} 
+            </div>
+
+            {{ form.submit }}
+        </form>
+    </div>
+{% endblock %}
